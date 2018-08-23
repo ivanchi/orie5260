@@ -25,11 +25,13 @@ class Tree(object):
         # print("level: " + str(level))
         # print("pos: " + str(pos))
         if isinstance(root, Node):
-            lst[-level - 1][pos] = root.value
-            if root.left: self.getAns(root.left, lst, level - 1, pos - 2 ** (level - 1))
-            if root.right: self.getAns(root.right, lst, level - 1, pos + 2 ** (level - 1))
+            lst[-level - 1][pos] = str(root.value)
+            if root.left or root.left == 0: 
+                self.getAns(root.left, lst, level - 1, pos - 2 ** (level - 1))
+            if root.right or root.right == 0: 
+                self.getAns(root.right, lst, level - 1, pos + 2 ** (level - 1))
         else:
-            lst[-level - 1][pos] = root
+            lst[-level - 1][pos] = str(root)
         return lst
 
 
