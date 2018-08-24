@@ -17,9 +17,9 @@ class Tree(object):
         """Get the list of list for a tree
         """
         h = self.getDepth(self.root)
-        #the maximum code for depth of h
+        #The maximum code for depth of h
         r = 2**h - 1
-        #Initialize the the list of list
+        #Initialize the list of list
         lst = [["|" for i in range(r)] for j in range(h)]
         lst = self.getAns(self.root, lst, h - 1, 2**(h - 1) - 1)
         return lst
@@ -31,7 +31,7 @@ class Tree(object):
         if isinstance(root, Node):
             #Change to the value of a node starting from the 1st level
             lst[-level - 1][pos] = str(root.value)
-            #Go the next level and adjusting the position based on if it is
+            #Go to the next level and adjust the position based on if it is
             #on the left or right
             if root.left or root.left == 0:
                 self.getAns(root.left, lst, level - 1, pos - 2 ** (level - 1))
