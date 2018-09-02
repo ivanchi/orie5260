@@ -18,7 +18,7 @@ def pyspark_kmeans(data_txt, c_txt):
     # adding index to data
     dat = data.zipWithIndex()
 
-    max_iter = 20
+    max_iter = 100
     
     for _ in range(max_iter):
         # adding index to centroids
